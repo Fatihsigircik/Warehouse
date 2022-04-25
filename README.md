@@ -15,3 +15,5 @@ Mobil için bu bilgiler **"SimpleWarehouseXamarin/Helper/ApiHelper.cs"** içeris
 **"GetToken"** metotunda bulunmaktadır.
 
 ![image](https://user-images.githubusercontent.com/23315712/165090117-3b8ef004-78eb-4afc-b3d7-99106dd2b6e7.png)
+
+Veri tabanı için **"fsDataBase.sql"** dosyasını inceleyebilirsiniz.
