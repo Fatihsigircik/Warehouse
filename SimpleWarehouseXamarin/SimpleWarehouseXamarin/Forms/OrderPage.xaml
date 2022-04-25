@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:SimpleWarehouseXamarin.UserControls;assembly=SimpleWarehouseXamarin"
+             xmlns:helper="clr-namespace:SimpleWarehouseXamarin.Helper;assembly=SimpleWarehouseXamarin"
+             x:Class="SimpleWarehouseXamarin.Forms.OrderPage" Appearing="OrderPage_OnAppearing" >
+    <ContentPage.Content>
+
+
+        <AbsoluteLayout x:Name="rootLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <AbsoluteLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="AbsoluteLayoutTapGestureRecognizer_OnTapped"/>
+            </AbsoluteLayout.GestureRecognizers>
+            <StackLayout x:Name="mainLayout" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                
+                <SearchBar Placeholder="Sipariş Kodu" x:Name="sbSearch" SearchButtonPressed="SbSearch_OnSearchButtonPressed" TextChanged="SbSearch_OnTextChanged"/>
+                
+                <ListView HorizontalOptions="CenterAndExpand" Margin="15,15,15,1" x:Name="lvOrders">
+                    <ListView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AbsoluteLayoutTapGestureRecognizer_OnTapped"/>
+                    </ListView.GestureRecognizers>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Tapped="AbsoluteLayoutTapGestureRecognizer_OnTapped">
+                                <userControls:OrderListItem Order="{Binding}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="OrderListItem_OnClicked"></userControls:OrderListItem>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+            <ImageButton Source="{helper:ImageResource SimpleWarehouseXamarin.Resources.plusX.png}"
+
+                   AbsoluteLayout.LayoutBounds="0.95,0.95,0.15,0.10"
+                   AbsoluteLayout.LayoutFlags="All"
+                   BackgroundColor="Transparent"
+                   Clicked="ImageButton_OnClicked"
+                   />
+            <ContentView x:Name="popupOverlay"
+                         IsVisible="False"
+                         BackgroundColor="#C0808080"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1"
+                         AbsoluteLayout.LayoutFlags="All"  VerticalOptions="FillAndExpand"  PropertyChanged="PopupOverlay_OnPropertyChanged">
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                </ContentView.GestureRecognizers>
+                <StackLayout x:Name="popupContent"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
+                             
+                             >
+                    <userControls:OrderItemDetail x:Name="orderItemDetail" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" BindingContextChanged="OrderItemDetail_OnBindingContextChanged"></userControls:OrderItemDetail>
+                </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

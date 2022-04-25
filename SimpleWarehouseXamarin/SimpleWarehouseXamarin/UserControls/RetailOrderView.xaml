@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleWarehouseXamarin.UserControls.RetailOrderView" BindingContextChanged="RetailOrderView_OnBindingContextChanged">
+    <ContentView.Content>
+        <StackLayout VerticalOptions="Start" >
+            <Label Text="Perakende Sipariş" IsVisible="False" x:Name="lblCaption"/>
+            <Grid BackgroundColor="WhiteSmoke" VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0">
+                    <Grid  Padding="10,0" BackgroundColor="#f6f6f6" HorizontalOptions="Start">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Placeholder="Sipariş No" FontSize="12" x:Name="txtOrderNumber" HorizontalOptions="FillAndExpand" Text="{Binding OrderCode}" />
+                            <Button WidthRequest="35" Text="..."  HorizontalOptions="End" x:Name="btnPrefix" Clicked="BtnPrefix_OnClicked"
+                                    HeightRequest="10"
+                                    />
+                        </StackLayout>
+                    </Grid>
+                    <Grid  Padding="10,0" BackgroundColor="#f6f6f6" HorizontalOptions="Start" >
+                        <Entry Placeholder="Belge No" FontSize="12" x:Name="txtDocNumber" Text="{Binding DocNumber}"/>
+                    </Grid>
+                    <Grid  Padding="10,0" BackgroundColor="#f6f6f6" HorizontalOptions="Start" >
+                        <DatePicker  FontSize="12" x:Name="dpOrderDate" Format="dd.MM.yyyy" Date="{Binding OrderDate}"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Column="1">
+                    <Grid  Padding="10,0" BackgroundColor="#f6f6f6" HorizontalOptions="Start">
+                        <Entry Placeholder="Müşteri Adı" FontSize="12" x:Name="txtName" Text="{Binding CustomerName}"/>
+                    </Grid>
+                    <Grid  Padding="10,0" BackgroundColor="#f6f6f6" HorizontalOptions="Start" >
+                        <Entry Placeholder="Müşteri Soyadı" FontSize="12" x:Name="txtSurname" Text="{Binding CustomerSurname}"/>
+                    </Grid>
+                    <Grid  Padding="10,0" BackgroundColor="#f6f6f6" HorizontalOptions="Start">
+                        <Entry Placeholder="Telefon Numarası" FontSize="12" x:Name="txtPhone"  Text="{Binding Phone}" Keyboard="Telephone"/>
+                    </Grid>
+                </StackLayout>
+
+
+
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

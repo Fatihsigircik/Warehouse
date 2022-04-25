@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleWarehouseXamarin.UserControls.OrderListItem" 
+             HorizontalOptions="StartAndExpand"
+             >
+    <ContentView.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <SwipeView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Incele" BackgroundColor="LightGreen" Clicked="MenuItem_OnClicked">
+                        </SwipeItem>
+                    </SwipeItems>
+
+                </SwipeView.LeftItems>
+
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" x:Name="lblOrderCode" HorizontalOptions="Start" VerticalTextAlignment="Center"></Label>
+                    <Label Grid.Column="1" x:Name="lblCustomer" HorizontalOptions="Start" VerticalTextAlignment="Center"></Label>
+                    <Label Grid.Column="2" x:Name="lblPrice" HorizontalOptions="Start" VerticalTextAlignment="Center"></Label>
+                    <Label Grid.Column="3" x:Name="lblDate" HorizontalOptions="Start" VerticalTextAlignment="Center"></Label>
+
+
+                </Grid>
+            </SwipeView>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

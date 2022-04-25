@@ -1,0 +1,57 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6cdcf0"
+    android:orientation="vertical"
+    android:paddingHorizontal="50dp"
+    android:gravity="center_horizontal"
+    android:paddingTop="40dp">
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login"
+        android:layout_marginBottom="30dp"/>
+    <EditText
+        android:id="@+id/txtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kullanıcı Adı"
+        android:inputType="text"
+    android:text="test"
+        android:layout_marginBottom="10dp"
+        android:background="@android:drawable/editbox_background">
+        <requestFocus />
+    </EditText>
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Şifre"
+        android:inputType="textPassword"
+        android:text="123"
+        android:layout_marginBottom="10dp"
+        android:background="@android:drawable/editbox_background">
+        
+    </EditText>
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giriş"
+        android:background="@drawable/buttonbackground">
+        
+    </Button>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

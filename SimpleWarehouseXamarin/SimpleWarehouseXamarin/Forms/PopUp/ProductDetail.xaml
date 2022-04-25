@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helper="clr-namespace:SimpleWarehouseXamarin.Helper;assembly=SimpleWarehouseXamarin"
+             x:Class="SimpleWarehouseXamarin.Forms.PopUp.ProductDetail" Title="Ürün Detayı">
+    <!--<NavigationPage.TitleView>
+        <Label Text="Hello World" />
+    </NavigationPage.TitleView>-->
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Fill" HorizontalOptions="Center"  Margin="15,15,5,0" >
+
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,15">
+                <Image x:Name="imgProduct"  Source="{helper:ImageResource SimpleWarehouseXamarin.Resources.no-photo.jpg}"  
+                   HeightRequest="100" 
+                   WidthRequest="100"
+                   Margin="0,0,0,15" ></Image>
+
+
+                <Grid VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Genel Bilbgiler" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+
+                    <Label Text="Ürün Kodu" Grid.Column="0" Grid.Row="1" FontAttributes="Bold"></Label>
+                    <Label Text="Ürün Adı" Grid.Column="0" Grid.Row="2" FontAttributes="Bold"></Label>
+                    <Label Text="Ürün Barkodu" Grid.Column="0" Grid.Row="3" FontAttributes="Bold"></Label>
+
+                    <Label x:Name="lblCode"  Grid.Column="1" Grid.Row="1"></Label>
+                    <Label x:Name="lblName" Grid.Column="1" Grid.Row="2" ></Label>
+                    <Label x:Name="lblBarcode" Grid.Column="1" Grid.Row="3"></Label>
+
+                </Grid>
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" >
+                <Label Text="Ürün Fyatları" HorizontalOptions="Center" FontSize="15" FontAttributes="Bold"></Label>
+            </StackLayout>
+            <Grid VerticalOptions="Start" HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <ListView Grid.Row="0" x:Name="lvPrice" HorizontalOptions="StartAndExpand" RowHeight="30">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="10,0,3,0">
+                                    <Label Text="{Binding GroupName}" HorizontalOptions="StartAndExpand" ></Label>
+                                    <Label Text="{Binding Price , StringFormat='{0:F2}'}" HorizontalOptions="Center"></Label>
+                                    <Label Text="{Binding CurrencyCode,StringFormat='{0:3}'}" HorizontalOptions="End" Padding="5, 0, 5, 0"></Label>
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+            <StackLayout HorizontalOptions="FillAndExpand" >
+                <Label Text="Ürün Stok Adetleri" HorizontalOptions="Center" FontSize="15" FontAttributes="Bold"></Label>
+            </StackLayout>
+            <Grid VerticalOptions="Start" HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <ListView Grid.Row="0" x:Name="lvStock" HorizontalOptions="StartAndExpand" RowHeight="30">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="10,0,3,0">
+                                    <Label Text="{Binding WarehouseName}" HorizontalOptions="StartAndExpand" ></Label>
+                                    <Label Text="{Binding Stock , StringFormat='{0:F2}'}" HorizontalOptions="Center"></Label>
+                                    <Label Text="{Binding UnitName}" HorizontalOptions="End" Padding="5, 0, 5, 0"></Label>
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

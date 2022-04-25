@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EEDCB5B0-C3D7-418B-A46B-4B2CE9A7B80D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SimpleWarehouseWindows</RootNamespace>
+    <AssemblyName>SimpleWarehouseWindows</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\winPublish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B78F8565B37F8E3C115E66CD9F1993FBFA42ADD6</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SimpleWarehouseWindows_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Krypton Docking, Version=5.470.764.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonToolkitSuite5470.5.470.2111\lib\net47\Krypton Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton Navigator, Version=5.470.810.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonToolkitSuite5470.5.470.2111\lib\net47\Krypton Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton Ribbon, Version=5.470.864.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonToolkitSuite5470.5.470.2111\lib\net47\Krypton Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton Toolkit, Version=5.470.2111.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonToolkitSuite5470.5.470.2111\lib\net47\Krypton Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton Workspace, Version=5.470.738.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\KryptonToolkitSuite5470.5.470.2111\lib\net47\Krypton Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormHelper\frmCustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelper\frmCustomerList.Designer.cs">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelper\frmMultiField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelper\frmMultiField.Designer.cs">
+      <DependentUpon>frmMultiField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelper\frmProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelper\frmProductList.Designer.cs">
+      <DependentUpon>frmProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelper\frmProductQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelper\frmProductQuantity.Designer.cs">
+      <DependentUpon>frmProductQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelper\frmSelectVariant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelper\frmSelectVariant.Designer.cs">
+      <DependentUpon>frmSelectVariant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelper\frmSupplierList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelper\frmSupplierList.Designer.cs">
+      <DependentUpon>frmSupplierList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelper\frmWerahouseSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelper\frmWerahouseSelect.Designer.cs">
+      <DependentUpon>frmWerahouseSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain2.Designer.cs">
+      <DependentUpon>frmMain2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Helpers\Models\FullOrder.cs" />
+    <Compile Include="Helpers\Models\OrderDetailHelper.cs" />
+    <Compile Include="Helpers\Models\VariantHelper.cs" />
+    <Compile Include="MenuForms\Defination\frmOrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Defination\frmOrderStatus.Designer.cs">
+      <DependentUpon>frmOrderStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\Defination\frmUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Defination\frmUnit.Designer.cs">
+      <DependentUpon>frmUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelper\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ApiHelper.cs" />
+    <Compile Include="Helpers\ResponseMessage.cs" />
+    <Compile Include="Helpers\RestSharpManager.cs" />
+    <Compile Include="Helpers\SettingsHelper.cs" />
+    <Compile Include="MenuForms\Defination\frmVariantGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Defination\frmVariantGroup.Designer.cs">
+      <DependentUpon>frmVariantGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\Defination\VarintGroupValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Defination\VarintGroupValue.Designer.cs">
+      <DependentUpon>VarintGroupValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\Product\frmProductOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Product\frmProductOutlet.Designer.cs">
+      <DependentUpon>frmProductOutlet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\Product\ProductImages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Product\ProductImages.Designer.cs">
+      <DependentUpon>ProductImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\Setup\frmSetupOrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Setup\frmSetupOrderStatus.Designer.cs">
+      <DependentUpon>frmSetupOrderStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\Setup\frmSetupUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Setup\frmSetupUnit.Designer.cs">
+      <DependentUpon>frmSetupUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\Setup\frmSetupVariantGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Setup\frmSetupVariantGroup.Designer.cs">
+      <DependentUpon>frmSetupVariantGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\Setup\frmSetupVariantGroupValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\Setup\frmSetupVariantGroupValue.Designer.cs">
+      <DependentUpon>frmSetupVariantGroupValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Currency.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerDetail.cs" />
+    <Compile Include="Models\CustomerDetailType.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\OrderStatus.cs" />
+    <Compile Include="Models\OrderType.cs" />
+    <Compile Include="Models\Prefix.cs" />
+    <Compile Include="Models\PriceListGroup.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductDetail.cs" />
+    <Compile Include="Models\ProductPriceList.cs" />
+    <Compile Include="Models\ProductVariant.cs" />
+    <Compile Include="Models\ProductVariantWithGroupName.cs" />
+    <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\SupplierDetail.cs" />
+    <Compile Include="Models\Town.cs" />
+    <Compile Include="Models\Unit.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserGroup.cs" />
+    <Compile Include="Models\Variant.cs" />
+    <Compile Include="Models\VariantGroup.cs" />
+    <Compile Include="Models\VariantProperty.cs" />
+    <Compile Include="Models\VwCustomer.cs" />
+    <Compile Include="Models\VwCustomerDetail.cs" />
+    <Compile Include="Models\VwOrder.cs" />
+    <Compile Include="Models\VwOrderDetails.cs" />
+    <Compile Include="Models\VwProduct.cs" />
+    <Compile Include="Models\VwProductDetails.cs" />
+    <Compile Include="Models\VwProductPriceList.cs" />
+    <Compile Include="Models\VwProductStockInWarehouse.cs" />
+    <Compile Include="Models\VwSupplier.cs" />
+    <Compile Include="Models\VwSupplierDetail.cs" />
+    <Compile Include="Models\Warehouse.cs" />
+    <Compile Include="Models\WebImage.cs" />
+    <Compile Include="NewForm\Customer\frmCustomerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Customer\frmCustomerDetail.Designer.cs">
+      <DependentUpon>frmCustomerDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Customer\frmCustomerDetailList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Customer\frmCustomerDetailList.Designer.cs">
+      <DependentUpon>frmCustomerDetailList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Customer\frmCustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Customer\frmCustomerList.Designer.cs">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Customer\frmNewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Customer\frmNewCustomer.Designer.cs">
+      <DependentUpon>frmNewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Order\frmNewInternetOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Order\frmNewInternetOrder.Designer.cs">
+      <DependentUpon>frmNewInternetOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Order\frmNewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Order\frmNewOrder.Designer.cs">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Order\frmNewRetailOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Order\frmNewRetailOrder.Designer.cs">
+      <DependentUpon>frmNewRetailOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Order\frmOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Order\frmOrderList.Designer.cs">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Product\frmNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Product\frmNewProduct.Designer.cs">
+      <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Product\frmNewProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Product\frmNewProductDetail.Designer.cs">
+      <DependentUpon>frmNewProductDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Product\frmProductDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Product\frmProductDetails.Designer.cs">
+      <DependentUpon>frmProductDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Product\frmProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Product\frmProductList.Designer.cs">
+      <DependentUpon>frmProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Supplier\frmNewSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Supplier\frmNewSupplier.Designer.cs">
+      <DependentUpon>frmNewSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Supplier\frmSupplierDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Supplier\frmSupplierDetail.Designer.cs">
+      <DependentUpon>frmSupplierDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Supplier\frmSupplierDetailList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Supplier\frmSupplierDetailList.Designer.cs">
+      <DependentUpon>frmSupplierDetailList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Supplier\frmSupplierList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Supplier\frmSupplierList.Designer.cs">
+      <DependentUpon>frmSupplierList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm\Variant\frmProductVariant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm\Variant\frmProductVariant.Designer.cs">
+      <DependentUpon>frmProductVariant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddProductDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddProductDetailControl.Designer.cs">
+      <DependentUpon>AddProductDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProductDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProductDetailControl.Designer.cs">
+      <DependentUpon>ProductDetailControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormHelper\frmCustomerList.resx">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelper\frmMultiField.resx">
+      <DependentUpon>frmMultiField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelper\frmProductList.resx">
+      <DependentUpon>frmProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelper\frmProductQuantity.resx">
+      <DependentUpon>frmProductQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelper\frmSelectVariant.resx">
+      <DependentUpon>frmSelectVariant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelper\frmSupplierList.resx">
+      <DependentUpon>frmSupplierList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelper\frmWerahouseSelect.resx">
+      <DependentUpon>frmWerahouseSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain2.resx">
+      <DependentUpon>frmMain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Defination\frmOrderStatus.resx">
+      <DependentUpon>frmOrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Defination\frmUnit.resx">
+      <DependentUpon>frmUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Defination\frmVariantGroup.resx">
+      <DependentUpon>frmVariantGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Defination\VarintGroupValue.resx">
+      <DependentUpon>VarintGroupValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Product\frmProductOutlet.resx">
+      <DependentUpon>frmProductOutlet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Product\ProductImages.resx">
+      <DependentUpon>ProductImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Setup\frmSetupOrderStatus.resx">
+      <DependentUpon>frmSetupOrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Setup\frmSetupUnit.resx">
+      <DependentUpon>frmSetupUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Setup\frmSetupVariantGroup.resx">
+      <DependentUpon>frmSetupVariantGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\Setup\frmSetupVariantGroupValue.resx">
+      <DependentUpon>frmSetupVariantGroupValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Customer\frmCustomerDetail.resx">
+      <DependentUpon>frmCustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Customer\frmCustomerDetailList.resx">
+      <DependentUpon>frmCustomerDetailList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Customer\frmCustomerList.resx">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Customer\frmNewCustomer.resx">
+      <DependentUpon>frmNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Order\frmNewInternetOrder.resx">
+      <DependentUpon>frmNewInternetOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Order\frmNewOrder.resx">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Order\frmNewRetailOrder.resx">
+      <DependentUpon>frmNewRetailOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Order\frmOrderList.resx">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Product\frmNewProduct.resx">
+      <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Product\frmNewProductDetail.resx">
+      <DependentUpon>frmNewProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Product\frmProductDetails.resx">
+      <DependentUpon>frmProductDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Product\frmProductList.resx">
+      <DependentUpon>frmProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Supplier\frmNewSupplier.resx">
+      <DependentUpon>frmNewSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Supplier\frmSupplierDetail.resx">
+      <DependentUpon>frmSupplierDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Supplier\frmSupplierDetailList.resx">
+      <DependentUpon>frmSupplierDetailList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Supplier\frmSupplierList.resx">
+      <DependentUpon>frmSupplierList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm\Variant\frmProductVariant.resx">
+      <DependentUpon>frmProductVariant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddProductDetailControl.resx">
+      <DependentUpon>AddProductDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ProductDetailControl.resx">
+      <DependentUpon>ProductDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SimpleWarehouseWindows_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3741756-bussiness-ecommerce-marketplace-onlinestore-store-user_108907.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner-1s-64px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-learning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\high-definition-multimedia-interface.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My Post.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\approval %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\approval.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accepted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MenuForms\Order\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skills.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\work-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\traceable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\work-list.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\work-list %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{b0cbe57f-f6ee-4664-8819-713a3ad97a09}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewStockMovement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\negative %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\measuring-tape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SeekPng.com_t-shirt-icon-png_6756693.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\value.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

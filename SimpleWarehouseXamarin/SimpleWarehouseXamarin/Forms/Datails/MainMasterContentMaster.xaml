@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimpleWarehouseXamarin.MainMasterContentMaster"
+             Title="Kolay Depo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="myBodyStyle" TargetType="Label"
+                   BaseResourceKey="BodyStyle">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="Padding" Value="10"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="BackgroundColor" Value="Beige"></Setter>
+            </Style>
+
+            <Style x:Key="mySubtitleStyle" TargetType="Label"
+                   BaseResourceKey="SubtitleStyle">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <d:Setter Property="FontSize" Value="50"></d:Setter>
+            </Style>
+
+            <Style x:Key="ImageStyle" TargetType="Image">
+
+                <Setter Property="Margin" Value="10"></Setter>
+                <Setter Property="BackgroundColor" Value="Beige"></Setter>
+                <Setter Property="HorizontalOptions" Value="Start"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="WidthRequest" Value="32"></Setter>
+                <Setter Property="HeightRequest" Value="32"></Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <StackLayout>
+        <Grid >
+            <Grid.Background>
+                <LinearGradientBrush  >
+                    <GradientStop Color="CadetBlue" Offset="0.0"/>
+                    <GradientStop Color="LightBlue" Offset="0.4"/>
+                    <GradientStop Color="DeepSkyBlue" Offset="0.7"/>
+                    <GradientStop Color="Blue" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <ListView x:Name="MenuItemsListView"
+                  SeparatorVisibility="None"
+                  HasUnevenRows="true"
+                  ItemsSource="{Binding MenuItems}"
+        >
+                <ListView.Header>
+                    <Grid BackgroundColor="#03A9F4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+              Grid.Column="1"
+              Grid.Row="0"
+              Text="Ana Menü"
+              Style="{StaticResource mySubtitleStyle}" Margin="5,10"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="15,5" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal" BackgroundColor="Beige">
+                                    <Image Grid.Column="0" Source ="{Binding Image}"  Style="{StaticResource ImageStyle}"></Image>
+                                    <Label Grid.Column="1" VerticalOptions="FillAndExpand" 
+           VerticalTextAlignment="Center" 
+           Text="{Binding Title}" 
+           Style="{StaticResource myBodyStyle}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+            </ListView>
+        </Grid>
+    </StackLayout>
+</ContentPage>

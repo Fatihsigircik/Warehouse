@@ -1,0 +1,111 @@
+﻿<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6cdcf0"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp"
+    android:gravity="center_horizontal"
+    >
+
+  <!--  <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ürün Stok Girişi"
+        android:layout_marginTop="20dp"
+android:layout_marginHorizontal="30dp"
+        android:textSize="25dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:background="@drawable/headerStyle"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="165.5dp"
+        android:paddingHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ürün Kodu"
+            android:textSize="20dp"
+            android:paddingLeft="5dp"
+    />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal"
+
+            >
+            <EditText
+                android:id="@+id/txtStockCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:maxWidth="120dp"
+                android:background="@android:drawable/editbox_background"/>
+
+            <Button
+                android:id="@+id/btnStockCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Getir"
+                android:layout_weight="5"
+                android:maxWidth="120dp"
+                android:background="@drawable/buttonbackground"
+      />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Barkod"
+            android:textSize="20dp"
+            android:paddingLeft="5dp"
+    />
+       
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal"
+
+            >
+            <EditText
+                android:id="@+id/txtBarcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:maxWidth="120dp"
+                android:background="@android:drawable/editbox_background"/>
+ <requestFocus />
+            <Button
+                android:id="@+id/btnBarcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Getir"
+                android:layout_weight="5"
+                android:maxWidth="120dp"
+                android:background="@drawable/buttonbackground"
+      />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+                android:id="@+id/ItemLineer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+                android:orientation="vertical"/>
+        </ScrollView>
+    </LinearLayout>
+  
+</LinearLayout>

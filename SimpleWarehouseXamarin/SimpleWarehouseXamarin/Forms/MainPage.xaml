@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="http://xamarin.com/schemas/2020/toolkit"
+             mc:Ignorable="d"
+             x:Class="SimpleWarehouseXamarin.MainPage" Title="Kolay Depo Giriş">
+ 
+    
+
+    <!--<NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center">Kolay Depo</Label>
+        </StackLayout>
+    </NavigationPage.TitleView>-->
+
+    <Grid >
+        <Grid.Background>
+            <RadialGradientBrush  Radius="0.5">
+                <GradientStop Color="CadetBlue" Offset="0.0"/>
+                <GradientStop Color="LightBlue" Offset="0.4"/>
+                <GradientStop Color="DeepSkyBlue" Offset="0.7"/>
+                <GradientStop Color="Blue" Offset="1.0"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <BoxView Opacity="0.3" BackgroundColor="#fdeae3"/>
+            <Grid HeightRequest="520" Margin="30">
+                <Path Fill="White"
+                      Aspect="Uniform"
+                      
+                      HorizontalOptions="Center"
+                      Opacity="0.5"
+                      Data="M30.6,172.838V696.314L348.157,426.72z"/>
+
+                <Path Fill="White"
+                      Aspect="Uniform"
+                      HorizontalOptions="Center"
+                      Opacity="0.8"
+                      Data="M30.6,172.838V650.665L320.465,404.581z"
+                      StrokeThickness="1"/>
+                <Path Fill="White"
+                      Aspect="Uniform"
+                      HorizontalOptions="Center"
+                      Opacity="0.8"
+                      Data="M30.6,172.838V605.512L293.073,382.682z"
+                      StrokeThickness="1"
+                      Stroke="#00c2ff"
+                      />
+                <StackLayout Spacing="20" VerticalOptions="CenterAndExpand" Margin="50,0">
+                    <Label Text="Giriş" TextColor="Black" FontSize="20" FontAttributes="Bold"></Label>
+                    <StackLayout Spacing="10">
+                        <Grid WidthRequest="160" Padding="10,0" BackgroundColor="#f6f6f6" HorizontalOptions="Start">
+                        <Entry Placeholder="Kullanıcı Adı" FontSize="12" x:Name="txtUserName" Completed="TxtUserName_OnCompleted">
+                            </Entry>
+                        </Grid>
+                        <Grid WidthRequest="160" Padding="10,0" BackgroundColor="#f6f6f6" HorizontalOptions="Start" >
+                            <Entry Placeholder="Parola" FontSize="12" x:Name="txtPassword" IsPassword="True" Completed="TxtPassword_OnCompleted"></Entry>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickGestureRecognizer_OnClicked"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Grid HorizontalOptions="Start" HeightRequest="33" WidthRequest="33">
+
+                            <Ellipse Stroke="#00c2ff"
+                             StrokeThickness="3"
+                             Aspect="Uniform"
+                             HeightRequest="33"
+                             WidthRequest="33"
+                             HorizontalOptions="Start"
+                    />
+
+                            <Path Fill="#00c2ff" Rotation="0" Aspect="Uniform" StrokeLineCap="Round" StrokeLineJoin="Round"
+                          WidthRequest="20" HeightRequest="20" Margin="6"
+          Data="M466.219,237.781L231.552,3.115C229.548,1.115,226.831-0.005,224,0H32
+	c-5.891-0.011-10.675,4.757-10.686,10.648c-0.005,2.84,1.123,5.565,3.134,7.571l227.136,227.115L24.448,472.448
+	c-4.171,4.16-4.179,10.914-0.019,15.085c2.006,2.011,4.731,3.139,7.571,3.134h192c2.831,0.005,5.548-1.115,7.552-3.115
+	l234.667-234.667c4.171-4.16,4.179-10.914,0.019-15.085C466.231,237.794,466.225,237.788,466.219,237.781z"/>
+
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+        
+    </Grid>
+
+</ContentPage>

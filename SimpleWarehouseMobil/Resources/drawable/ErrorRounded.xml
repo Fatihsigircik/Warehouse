@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <shape>
+      <padding android:bottom="-5dp"></padding>
+      <solid android:color="@android:color/holo_red_light" />
+      <stroke android:width="3dp" android:color="#FF000000"/>
+      <corners android:radius="1dp" />
+    </shape>
+  </item>
+</selector>

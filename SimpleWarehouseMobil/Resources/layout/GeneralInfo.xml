@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Depo Seçin"
+            android:textSize="20dp"
+            android:paddingLeft="5dp"
+            android:layout_marginBottom="3dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/layoutborder2">
+            <Spinner
+                android:id="@+id/spnWarehouse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Belge Numarası"
+            android:textSize="20dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="15dp"/>
+        <EditText
+            android:id="@+id/txtDocNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:maxWidth="120dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:drawable/editbox_background"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tamam"
+                android:background="@drawable/buttonbackground">
+
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

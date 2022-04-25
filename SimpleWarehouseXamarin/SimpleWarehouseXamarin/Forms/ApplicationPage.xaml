@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+ 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sam="clr-namespace:DataGridSam;assembly=DataGridSam"
+             xmlns:userControls="clr-namespace:SimpleWarehouseXamarin.UserControls;assembly=SimpleWarehouseXamarin"
+             xmlns:helper="clr-namespace:SimpleWarehouseXamarin.Helper;assembly=SimpleWarehouseXamarin"
+             mc:Ignorable="d"
+             x:Class="SimpleWarehouseXamarin.Forms.ApplicationPage">
+    <!--<NavigationPage.TitleView>
+        <AbsoluteLayout VerticalOptions="CenterAndExpand">
+            <ImageButton Source ="{helper:ImageResource SimpleWarehouseXamarin.Resources.ic-action-dehaze-big.png}" BackgroundColor="Transparent"></ImageButton>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>-->
+
+    <ContentPage.Content>
+        <StackLayout Margin="5,5,5,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+           
+            <SearchBar x:Name="sbProductCode" Placeholder="Ürün Kodu " Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0" SearchButtonPressed="SearchBar_OnSearchButtonPressed" TextChanged="SbProductCode_OnTextChanged">
+               
+            </SearchBar>
+                <ListView x:Name="lvProducts" Margin="10,3" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <userControls:View1 Code="{Binding ProductCode}" Name="{Binding ProductName}"/>
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
+
+                <Path x:Name="pathPrevious" Grid.Column="0" Grid.Row="2" Data="M466.219,237.781L231.552,3.115C229.548,1.115,226.831-0.005,224,0H32
+	c-5.891-0.011-10.675,4.757-10.686,10.648c-0.005,2.84,1.123,5.565,3.134,7.571l227.136,227.115L24.448,472.448
+	c-4.171,4.16-4.179,10.914-0.019,15.085c2.006,2.011,4.731,3.139,7.571,3.134h192c2.831,0.005,5.548-1.115,7.552-3.115
+	l234.667-234.667c4.171-4.16,4.179-10.914,0.019-15.085C466.231,237.794,466.225,237.788,466.219,237.781z" Fill="Gray" Rotation="0" Aspect="Uniform" StrokeLineCap="Round" StrokeLineJoin="Round"
+                      WidthRequest="10" HeightRequest="10" RotationY="180" >
+
+                    <Path.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Previous"/>
+                    </Path.GestureRecognizers>
+                </Path>
+
+                <Path x:Name="pathNext" Grid.Column="2" Grid.Row="2" Data="M466.219,237.781L231.552,3.115C229.548,1.115,226.831-0.005,224,0H32
+	c-5.891-0.011-10.675,4.757-10.686,10.648c-0.005,2.84,1.123,5.565,3.134,7.571l227.136,227.115L24.448,472.448
+	c-4.171,4.16-4.179,10.914-0.019,15.085c2.006,2.011,4.731,3.139,7.571,3.134h192c2.831,0.005,5.548-1.115,7.552-3.115
+	l234.667-234.667c4.171-4.16,4.179-10.914,0.019-15.085C466.231,237.794,466.225,237.788,466.219,237.781z" Fill="#00c2ff" Rotation="0" Aspect="Uniform" StrokeLineCap="Round" StrokeLineJoin="Round"
+                      WidthRequest="10" HeightRequest="10" >
+                    <Path.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Next"/>
+                    </Path.GestureRecognizers>
+
+                </Path>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

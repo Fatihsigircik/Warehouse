@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helper="clr-namespace:SimpleWarehouseXamarin.Helper;assembly=SimpleWarehouseXamarin"
+             xmlns:userControls="clr-namespace:SimpleWarehouseXamarin.UserControls;assembly=SimpleWarehouseXamarin"
+             x:Class="SimpleWarehouseXamarin.Forms.ProductInPage">
+    <ContentPage.Content>
+        <StackLayout >
+
+            <Grid Margin="10,50,10,0" VerticalOptions="FillAndExpand" >
+<Grid.RowDefinitions>
+    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+          <Grid Grid.Row="0" VerticalOptions="StartAndExpand">
+              <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+              <Entry Grid.Column="0" Placeholder="Doküman No" x:Name="txtDocNumber"/>
+              <Picker Grid.Column="1" x:Name="pckWarehouse"/>
+          </Grid>
+
+<StackLayout Grid.Row="1" Orientation="Horizontal"  VerticalOptions="StartAndExpand">
+                <Label Text="Seçili Ürünler" TextColor="Red" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Medium" FontAttributes="Bold" Margin="30,0,0,0"/>
+                <ImageButton HorizontalOptions="End"
+                             Source="{helper:ImageResource SimpleWarehouseXamarin.Resources.plusX.png}"
+                             BackgroundColor="Transparent"
+                             WidthRequest="40"
+                             HeightRequest="40"
+                             Margin="0,0,10,0"
+                             Clicked="ImageButton_OnClicked"
+                />
+            </StackLayout>
+               
+
+                <ListView Grid.Row="2" VerticalOptions="FillAndExpand" x:Name="lvInorOut" RowHeight="100" HorizontalOptions="FillAndExpand" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <userControls:ProductInOutLine ProductDetail="{Binding}" 
+                                                               HorizontalOptions="FillAndExpand" 
+                                                               VerticalOptions="FillAndExpand"
+                                                               Deleted="NewOrderLine_OnDeleted"
+                                                               Updated="NewOrderLine_OnUpdated"
+                                                               />
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button Grid.Row="3" Text="Kaydet" Margin="50,0,50,20" Clicked="Button_OnClicked"/>
+            </Grid>
+
+
+  
+            
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

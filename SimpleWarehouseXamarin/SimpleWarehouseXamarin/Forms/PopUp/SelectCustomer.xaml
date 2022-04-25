@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleWarehouseXamarin.Forms.PopUp.SelectCustomer" Opacity="50">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Opacity="50" Margin="0,20,0,20" >
+            <StackLayout Orientation="Horizontal" Margin="0,0,10,20">
+                <Label Text="Cari Seçiniz" HorizontalOptions="CenterAndExpand"  FontSize="Large" FontAttributes="Bold"/>
+                <Label Text="X" HorizontalOptions="End" FontSize="Large" FontAttributes="Bold" TextColor="Red">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout x:Name="nameValidation" BackgroundColor="GhostWhite" Margin="10,0,10,0" >
+                <SearchBar x:Name="sbSearch" Placeholder="Müşteri Kodu" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                           SearchButtonPressed="SbSearch_OnSearchButtonPressed" TextColor="DarkGray" TextChanged="SbSearch_OnTextChanged"/>
+            </StackLayout>
+
+            <ListView x:Name="lvCustomers" VerticalOptions="Center" Margin="50,0,50,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Tapped="Cell_OnTapped">
+                            <StackLayout Orientation="Horizontal">
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <RadioButton Grid.Column="0" GroupName="grb" x:Name="rb" CheckedChanged="Rb_OnCheckedChanged" BindingContext="{Binding}"/>
+                                    <Label Grid.Column="1" Text="{Binding CustomerCode}" Style="{StaticResource LabelStyle}"/>
+                                    <Label Grid.Column="2" Text="{Binding CustomerName}" Style="{StaticResource LabelStyle}"/>
+                                    <Label Grid.Column="3" Text="{Binding CustomerSurname}" Style="{StaticResource LabelStyle}"/>
+                                </Grid>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            <Button Text="Tamam" Clicked="Button_OnClicked" Margin="0,0,0,20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

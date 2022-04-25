@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helper="clr-namespace:SimpleWarehouseXamarin.Helper;assembly=SimpleWarehouseXamarin"
+             x:Class="SimpleWarehouseXamarin.UserControls.OrderLineDetail" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout VerticalOptions="Start" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" x:Name="imgProduct" Source="{helper:ImageResource SimpleWarehouseXamarin.Resources.no-photo.jpg}"></Image>
+                <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" Style="{StaticResource LabelStyle}" Text="{Binding ProductName}"></Label>
+                <Label Grid.Column="1" Grid.Row="1"  HorizontalOptions="Start" Text="{Binding ProductCode}" Style="{StaticResource LabelStyle}"></Label>
+                <Label Grid.Column="1" Grid.Row="2"  HorizontalOptions="Start" Text="{Binding Barcode}" Style="{StaticResource LabelStyle}"></Label>
+
+                <StackLayout Grid.Column="2" Grid.Row="1" Orientation="Horizontal">
+                    <Label HorizontalOptions="Start" Text="{Binding Price,StringFormat='{0:N2}'}" Style="{StaticResource LabelStyle}"></Label>
+                    <Label HorizontalOptions="Start" Text="{Binding CurrencyCode}" Style="{StaticResource LabelStyle}"></Label>
+                </StackLayout>
+                
+<StackLayout Grid.Column="2" Grid.Row="2" Orientation="Horizontal">
+                    <Label   HorizontalOptions="Start" Text="{Binding Quantity, StringFormat='{0:#}'}" Style="{StaticResource LabelStyle}"></Label>
+                    <Label Grid.Column="2" Grid.Row="2"  HorizontalOptions="Start" Text="{Binding UnitName}" Style="{StaticResource LabelStyle}"></Label>
+</StackLayout>
+
+
+                <Label Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" VerticalOptions="Center"  HorizontalOptions="Center" Text="{Binding WarehouseName}" Style="{StaticResource LabelStyle}"></Label>
+
+            </Grid>
+
+
+
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

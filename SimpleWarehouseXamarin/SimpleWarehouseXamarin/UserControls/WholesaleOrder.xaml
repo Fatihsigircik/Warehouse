@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleWarehouseXamarin.UserControls.WholesaleOrder" BindingContextChanged="WholesaleOrder_OnBindingContextChanged">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+
+        <StackLayout>
+            <Label Text="Toptan Sipariş" IsVisible="False" x:Name="lblCaption"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+           
+            <Grid Grid.Row="0" Grid.Column="1" BackgroundColor="#f6f6f6" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Sipariş No" FontSize="12" x:Name="txtOrderNumber" HorizontalOptions="FillAndExpand" Text="{Binding OrderCode}"/>
+                    <Button WidthRequest="35" Text="..."  HorizontalOptions="End" x:Name="btnPrefix"  
+                            HeightRequest="10" Clicked="BtnPrefix_OnClicked" 
+                    />
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="0" BackgroundColor="#f6f6f6" HorizontalOptions="FillAndExpand" >
+                <Entry Placeholder="Belge No" FontSize="12" x:Name="txtDocNumber" Text="{Binding DocNumber}"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2" BackgroundColor="#f6f6f6" HorizontalOptions="Center" >
+                <DatePicker  FontSize="12" x:Name="dpOrderDate" Format="dd.MM.yyyy" Date="{Binding OrderDate}"/>
+            </Grid>
+
+                <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" Orientation="Horizontal" x:Name="slInfo">
+                    <Label Text="Müşteri :" HorizontalOptions="Start" TextColor="Red" VerticalOptions="Center"/>
+                    <Label Text="{Binding CustomerCode}"  Style="{StaticResource LabelStyle}" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="{Binding FullName}" Style="{StaticResource LabelStyle}" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="{Binding Phone}" Style="{StaticResource LabelStyle}" HorizontalOptions="StartAndExpand"/>
+                    <Button WidthRequest="35" Text="..."  HorizontalOptions="End" x:Name="btnCustomer"  
+                            HeightRequest="30" Clicked="BtnCustomer_OnClicked" VerticalOptions="CenterAndExpand"
+                    />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" Orientation="Horizontal" x:Name="slInvoice">
+                    <Label Text="Fatura :" HorizontalOptions="Start" TextColor="Red" VerticalOptions="Center"/>
+                    <Label Text="{Binding TaxNumber}" Style="{StaticResource LabelStyle}"/>
+                    <Label Text="{Binding TaxOffice}" Style="{StaticResource LabelStyle}"/>
+                    <!--<Label Text="{Binding FullInvoiceAddress}" Style="{StaticResource LabelStyle}"/>-->
+                </StackLayout>
+                <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" Orientation="Horizontal" x:Name="slDelivery">
+                    <Label Text="Adres :" HorizontalOptions="Start" TextColor="Red" VerticalOptions="Center"/>
+                    <Label Text="{Binding FullInvoiceAddress}" Style="{StaticResource LabelStyle}"/>
+                </StackLayout>
+
+            </Grid>
+
+            <ContentView x:Name="popupOverlay" 
+                         IsVisible="False"
+                         BackgroundColor="Red"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1"
+                         AbsoluteLayout.LayoutFlags="All"  VerticalOptions="FillAndExpand"  
+                         >
+<Label Text="merhaba" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"></Label>
+            </ContentView>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,7 @@
+﻿<resources>
+    <string name="app_name">Kolay Depo</string>
+    <string name="action_settings">Settings</string>
+
+  <string name="menuItem1">Onayla</string>
+  <string name="menuItem2">İptal Et</string>
+</resources>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helper="clr-namespace:SimpleWarehouseXamarin.Helper;assembly=SimpleWarehouseXamarin"
+             x:Class="SimpleWarehouseXamarin.UserControls.View1">
+  <ContentView.Content>
+      <StackLayout>
+            <SwipeView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Threshold="100">
+              <SwipeView.LeftItems>
+                    <SwipeItems Mode="Execute">
+                      <SwipeItem Text="Incele" BackgroundColor="LightGreen" Invoked="SwipeItem_OnInvoked" />
+                  </SwipeItems>
+
+              </SwipeView.LeftItems>
+                <Grid>
+              
+              <Grid.ColumnDefinitions >
+                  <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                  <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+              <Label x:Name="lblCode" Grid.Column="0" Margin="8,1" VerticalOptions="Center" TextColor="Red"></Label>
+              <Label x:Name="lblName" Grid.Column="1" VerticalOptions="Center"></Label>
+                <!--<ImageButton x:Name="imageButton" Grid.Column="2" Clicked="ImageButton_OnClicked" Source="{helper:ImageResource  SimpleWarehouseXamarin.Resources.search.png}"
+                             WidthRequest="30" HeightRequest="30" BackgroundColor="Transparent">-->
+                 
+                <!--</ImageButton>-->
+
+            </Grid>
+              </SwipeView>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

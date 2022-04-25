@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:SimpleWarehouseXamarin.UserControls;assembly=SimpleWarehouseXamarin"
+             x:Class="SimpleWarehouseXamarin.UserControls.OrderItemDetail" HorizontalOptions="FillAndExpand" BackgroundColor="WhiteSmoke">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" >
+
+    <StackLayout  HorizontalOptions="FillAndExpand" Padding="5,0,1,0" VerticalOptions="Start"  Orientation="Horizontal">
+        <Label Text="{Binding DocNumber,StringFormat='{0:dd.MM.yyy}'}" VerticalTextAlignment="Center" Margin="0,25,5,0"
+                      
+               HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding OrderCode,StringFormat='#{0}'}" HorizontalOptions="FillAndExpand" FontSize="20" FontAttributes="Bold" 
+               Margin="0,22,0,0"
+               HorizontalTextAlignment="Center"
+                       
+        />
+                  
+
+                <Label Text="{Binding CreatedDate,StringFormat='{0:dd.MM.yyy}'}" VerticalTextAlignment="Center" Margin="0,25,5,0"
+                    
+                       HorizontalTextAlignment="End"
+                       />
+                
+                <Label Text="X" TextColor="Red" BackgroundColor="WhiteSmoke" 
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       Margin="0,5,5,0"
+                    
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Grid Margin="5,0,2,0"  VerticalOptions="Start">
+              <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"></RowDefinition>
+              </Grid.RowDefinitions>
+              <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand">
+                  <Label Text="Müşteri" HorizontalOptions="Start" TextColor="Red"/>
+                    <Label Text="{Binding CustomerCode}"  Style="{StaticResource LabelStyle}"/>
+                    <Label Text="{Binding CompanyName}" Style="{StaticResource LabelStyle}"/>
+                    <Label Text="{Binding Mail}" Style="{StaticResource LabelStyle}"/>
+                    <Label Text="{Binding Phone}" Style="{StaticResource LabelStyle}"/>
+                </StackLayout>
+
+              <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand">
+                  <Label Text="Fatura" HorizontalOptions="Start" TextColor="Red"/>
+                    <Label Text="{Binding TaxNumber}" Style="{StaticResource LabelStyle}"/>
+                    <Label Text="{Binding TaxOffice}" Style="{StaticResource LabelStyle}"/>
+                    <Label Text="{Binding FullInvoiceAddress}" Style="{StaticResource LabelStyle}"/>
+              </StackLayout>
+              <StackLayout Grid.Column="2" HorizontalOptions="FillAndExpand">
+                  <Label Text="Teslimat" HorizontalOptions="Start" TextColor="Red"/>
+                    <Label Text="{Binding FullDeliveryAddress}" Style="{StaticResource LabelStyle}"/>
+              </StackLayout>
+            </Grid>
+
+
+            <ListView x:Name="lvLineDetail"  VerticalOptions="Start"  Margin="5,5,2,20" RowHeight="80">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <userControls:OrderLineDetail OrderDetail="{Binding}"   HorizontalOptions="StartAndExpand" VerticalOptions="Start" ></userControls:OrderLineDetail>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackLayout>
+            <StackLayout VerticalOptions="End" Orientation="Horizontal" Margin="5,0,5,0">
+                <Label Text="{Binding OrderStatusName}" HorizontalOptions="Start"  />
+                <Label Text="{Binding TotalVal,StringFormat='{0:N2}'}" HorizontalOptions="EndAndExpand"  />
+                <Label Text="{Binding CurrencyCode,StringFormat='{0:N2}'}" HorizontalOptions="End" Margin="0,0,5,0" />
+            </StackLayout>
+            <StackLayout VerticalOptions="End" Orientation="Horizontal" Margin="5,0,5,5">
+                <Label Text="{Binding OrderTypeName}" HorizontalOptions="Start"  />
+                <Label Text="{Binding TotalPrice,StringFormat='{0:N2}'}" HorizontalOptions="EndAndExpand"  />
+                <Label Text="{Binding CurrencyCode,StringFormat='{0:N2}'}" HorizontalOptions="End" Margin="0,0,5,0" />
+            </StackLayout>
+          
+            <!--<Grid HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Müşteri Bilgileri" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"></Label>
+
+                <Grid Grid.Row="1" Grid.Column="0" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" Text="Kodu"></Label>
+                    <Label Grid.Column="0" Grid.Row="1" Text="Ünvanı"></Label>
+                    <Label Grid.Column="0" Grid.Row="2" Text="Telefon"></Label>
+                    <Label Grid.Column="1" Grid.Row="0" x:Name="CustomerCode"></Label>
+                    <Label Grid.Column="1" Grid.Row="1" x:Name="CustomerName"></Label>
+                    <Label Grid.Column="1" Grid.Row="2" x:Name="customerPhone"></Label>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0">
+                        <Label  Text="Fatura Adresi"></Label>
+                        <Label  Text="Adres Madres"></Label>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1">
+                        <Label  Text="Teslimat Adresi "></Label>
+                        <Label  Text="teslimatta adres buraya gelecek bakalım ne kadar uzun alıyor burası iki stır veya 3 satır"></Label>
+                    </StackLayout>
+                </Grid>
+
+            </Grid>-->
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:helper="clr-namespace:SimpleWarehouseXamarin.Helper;assembly=SimpleWarehouseXamarin"
+             mc:Ignorable="d"
+             x:Class="SimpleWarehouseXamarin.MainMasterContentDetail"
+             Title="Kolay Depo">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text="Kolay Depo" TextColor="White" HorizontalTextAlignment="Center" FontSize="20" FontAttributes="Bold" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+        <Style x:Key="myBodyStyle" TargetType="Label"
+               BaseResourceKey="BodyStyle">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="VerticalOptions" Value="End"></Setter>
+            <Setter Property="HorizontalOptions" Value="Center"></Setter>
+        </Style>
+
+            <Style x:Key="ImageStyle" TargetType="Image">
+                <Setter Property="Margin" Value="10"></Setter>
+                <Setter Property="WidthRequest" Value="96"></Setter>
+                <Setter Property="HeightRequest" Value="96"></Setter>
+            </Style>
+            <Style x:Key="ImageStyle2" TargetType="StackLayout">
+                <Setter Property="Margin" Value="10"></Setter>
+                <Setter Property="WidthRequest" Value="64"></Setter>
+                <Setter Property="HeightRequest" Value="64"></Setter>
+            </Style>
+        </ResourceDictionary>
+</ContentPage.Resources>
+        <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="StackLayoutTapped" CommandParameter="Product"/>
+                </StackLayout.GestureRecognizers>
+                <Image  Source="{helper:ImageResource SimpleWarehouseXamarin.Resources.blank.png}" 
+                        Style="{StaticResource ImageStyle2}" 
+                ></Image>
+                <Label Style="{StaticResource myBodyStyle}">Ürünler</Label>
+            </StackLayout>
+
+            <StackLayout Grid.Column="0" Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" >
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="StackLayoutTapped" CommandParameter="ProductIn"/>
+                </StackLayout.GestureRecognizers>
+                <Image  Source="{helper:ImageResource SimpleWarehouseXamarin.Resources.in.png}" 
+                        Style="{StaticResource ImageStyle}"></Image>
+                <Label Style="{StaticResource myBodyStyle}">Ürün Girişi</Label>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="StackLayoutTapped" CommandParameter="Order"/>
+                </StackLayout.GestureRecognizers>
+                <Image  Source="{helper:ImageResource SimpleWarehouseXamarin.Resources.cart.png}" Style="{StaticResource ImageStyle2}"></Image>
+                <Label Style="{StaticResource myBodyStyle}">Siparişler</Label>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="StackLayoutTapped" CommandParameter="ProductOut"/>
+                </StackLayout.GestureRecognizers>
+                <Image  Source="{helper:ImageResource SimpleWarehouseXamarin.Resources.out.png}" Style="{StaticResource ImageStyle}"></Image>
+                <Label Style="{StaticResource myBodyStyle}">Ürün Çıkışı</Label>
+            </StackLayout>
+
+        </Grid>
+    </StackLayout>
+</ContentPage>

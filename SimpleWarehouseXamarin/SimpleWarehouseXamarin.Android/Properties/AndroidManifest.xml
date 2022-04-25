@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.KolayDepo.Kolay_Depo" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="18" android:targetSdkVersion="29" />
+	<application android:label="Kolay Depo"></application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA" />
+</manifest>
